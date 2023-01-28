@@ -24,7 +24,7 @@ export function getRandomMatrix(rows: number, columns: number, min: number, max:
 //5.3
 export function getRandomArrayElement(array: any[]): any {
     let index:number =  getRandomNumber(0, array.length);
-    return array[index];
+    return  array[index];
 }
 //5.4
 const daysInMonth: number[] = [31,28,31,30,31,30,31,31,30,31,30,31]; 
