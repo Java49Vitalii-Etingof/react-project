@@ -1,6 +1,23 @@
+import React from "react";
 import { authActions } from "../redux/authSlice";
 import {useDispatch} from 'react-redux'
-export const Login: React.FC = ()=>{
+import { Input } from "./Input";
+
+type Props = {
+    loginValidation: (userName: string) => boolean
+}
+export const Login: React.FC<Props> = (props)=>{
+    const [userName, setUserName] = React.useState('');
     const dispatch = useDispatch();
-    return <button onClick={() => dispatch(authActions.login())}>Login</button>
+    function getUserName(value: string): string {
+        if( props.loginValidation(value)) {
+            setUserName(value);
+        }
+        return'';
+    }
+    return <div>
+        <Input placeHolder= {'Enter valid user name'} inputProcess={getUserName} ></Input> 
+        <p>userName: {userName}</p>
+        <button onClick={ () => dispatch(authActions.login(userName))}>login</button>
+           </div>
 }
