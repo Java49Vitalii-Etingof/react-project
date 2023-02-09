@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 
 export const Products: React.FC = () => {
     return <div>
@@ -13,5 +13,6 @@ export const Products: React.FC = () => {
                
                 </ul>
         </nav>
+        <Outlet></Outlet>
         </div>
 }
