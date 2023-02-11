@@ -5,8 +5,8 @@
     width: 80vw;
     list-style: none;
 }
-@media(min-width: 560px) {
+@media(min-width: 560px) { 
 .navigator-list {
     flex-direction: row;
-}    
+}       
 }
